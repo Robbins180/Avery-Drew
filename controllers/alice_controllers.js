@@ -14,7 +14,7 @@ const Alice = require('../models/alice.js')
     Alice.create(req.body, (error, createdAlice) => {
       Alice.find({}, (error, foundAlice) => {
         res.json(foundAlice)
-      }
+      })
     })
   })
 
