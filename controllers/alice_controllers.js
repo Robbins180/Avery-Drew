@@ -12,7 +12,7 @@ const Alice = require('../models/alice.js')
 // Create
   alice.post('/', (req,res) => {
     Alice.create(req.body, (error, createdAlice) => {
-      Alice.find{}, (error, foundAlice) => {
+      Alice.find({}, (error, foundAlice) => {
         res.json(foundAlice)
       }
     })
