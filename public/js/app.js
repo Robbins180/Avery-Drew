@@ -56,7 +56,8 @@ class App extends React.Component {
     render = () => {
         return (
           <div>
-            <h2>Create Character</h2>
+            <h1>Create Character</h1>
+            <div className="add">
             <details>
             <summary>Add An Character</summary>
               <form
@@ -82,6 +83,7 @@ class App extends React.Component {
               value="Add Character" />
               </form>
               </details>
+              </div>
               <h2>List of Characters</h2>
                 <ul>
                 {this.state.characters.map((alice) => {
@@ -89,6 +91,7 @@ class App extends React.Component {
                       <li key={alice._id}>
                       {alice.name} <br />
                       <img src={alice.image} alt={alice.name} />
+                      <div className="edit">
                       <details>
                       <summary>Edit this character</summary>
                       <form id={alice._id} onSubmit={this.updateAlice}>
@@ -100,11 +103,11 @@ class App extends React.Component {
                         <br />
                         <input type="text" id="image"  onChange={this.handleChange} />
                         <br />
-                        <input type="submit" value="Update Character" />
+                        <input type="submit" id="updateBtn" value="Update Character" />
                         </form>
                         </details>
-
-                      <button value={alice._id} onClick={this.deleteAlice}>
+                        </div>
+                      <button value={alice._id} id="deleteBtn" onClick={this.deleteAlice}>
                         DELETE
                       </button>
                       </li>

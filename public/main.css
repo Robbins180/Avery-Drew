@@ -27,10 +27,28 @@ li {
   background: #12121212;
   box-sizing: border-box;
   padding: 2%;
-  box-shadow: 2px 2px 4px #d9718e;
+  box-shadow: 2px 2px 4px #c2d674;
 }
 button {
-  background: gold;
+  background: pink;
   padding: 0.5em;
   margin: 0.5em;
+}
+.add{
+  color: #4c1059;
+}
+form{
+  color: white;
+  margin: 2%;
+  padding: 2%;
+}
+#updateBtn, #deleteBtn{
+  font-family: 'Alice', sans-serif;
+  border-radius: 40%;
+  background-color: black;
+  color: white;
+  margin: 5px;
+}
+.edit{
+  font-family: 'Alice', sans-serif;
 }
