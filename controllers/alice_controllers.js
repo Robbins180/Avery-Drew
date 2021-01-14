@@ -1,6 +1,5 @@
 const express = require('express')
 const alice = express.Router()
-
 const Alice = require('../models/alice.js')
 
 // Read
