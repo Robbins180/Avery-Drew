@@ -18,14 +18,34 @@ class App extends React.Component {
     )
   }
 
+  deleteAlice = event => {
+  axios.delete('/alice/' + event.target.value).then(response => {
+    this.setState({
+      characters: response.data
+      })
+    })
+  }
+
 
   componentDidMount = () => {
     axios.get("/alice").then((response) => {
       this.setState({
         characters: response.data,
-      });
-    });
-  };
+      })
+    })
+  }
+
+    updateAlice = event => {
+    event.preventDefault()
+    const id = event.target.id
+    axios.put('/alice/' + id, this.state).then(response => {
+      this.setState({
+        characters: response.data,
+        name: '',
+        image: ''
+        })
+      })
+    }
 
   render = () => {
     return (
@@ -47,7 +67,11 @@ class App extends React.Component {
             {this.state.characters.map((char) => {
               return (
                 <li key={char._id}>{char.name} <br />
+                {char.name} <br />
                 <img src={char.image} alt={char.name} />
+                <button value={char._id}onClick={char.deleteAlice}>
+                  DELETE
+                </button>
                 </li>
               )
             })}

@@ -4,6 +4,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 
 //=================
@@ -11,6 +12,7 @@ const mongoose = require('mongoose')
 //=================
 app.use(express.json())
 app.use(express.static('public'))
+app.use(cors({origin: '*'}));
 
 
 // ==================
