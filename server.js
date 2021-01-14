@@ -44,9 +44,8 @@ mongoose.connection.on('disconnected', () => console.log('mongo disconnected'))
 //  CONTROLLER
 // =================
 
-app.get('/alice', (req, res) => {
-  res.send("hello world")
-});
+const aliceController = require('./controllers/alice_controllers.js')
+app.use('/alice', aliceController)
 
 //==================
 //  LISTENER
